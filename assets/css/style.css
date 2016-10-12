@@ -1,0 +1,202 @@
+@font-face {
+	font-family: 'Inconsolata-Bold';
+	src: url('../fonts/Inconsolata-Bold.eot');
+	src: url('../fonts/Inconsolata-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Inconsolata-Bold.woff') format('woff'),
+		url('../fonts/Inconsolata-Bold.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'Inconsolata-Regular';
+	src: url('../fonts/Inconsolata-Regular.eot');
+	src: url('../fonts/Inconsolata-Regular.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/Inconsolata-Regular.woff') format('woff'),
+		url('../fonts/Inconsolata-Regular.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'BebasNeueBold';
+	src: url('../fonts/BebasNeueBold.eot');
+	src: url('../fonts/BebasNeueBold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/BebasNeueBold.woff') format('woff'),
+		url('../fonts/BebasNeueBold.ttf') format('truetype');
+	font-weight: normal;
+	font-style: normal;
+}
+
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+html, body {
+	height:100%;	
+}
+
+body {
+	font-family: 'Inconsolata-Regular', monospace;
+	color:#333;
+	-webkit-font-smoothing:antialiased;
+}
+
+a, a:visited {
+	color:#333;
+	/*text-decoration:none;*/
+}
+a:hover, a:active {
+	text-decoration:none;
+}
+
+hr {
+	border: 0;
+    border-bottom: 1px dashed #333;
+    /*background: #999;*/
+}
+
+.nowrap {
+	/*white-space: nowrap;*/
+	overflow:hidden;
+	height:20px;
+}
+
+.valign-outer {
+	display:table;
+	height:100%;
+	width:100%;
+}
+
+.valign-inner {
+	display:table-cell;
+	vertical-align:middle;
+}
+
+.container {
+	max-width:444px;
+	padding:30px 20px 0;
+	margin:0 auto;
+	text-align:center;
+}
+
+h1 {
+	font-family: 'BebasNeueBold';
+	font-size:92px;
+	margin:0;
+	word-spacing: 0.05em;
+	font-weight:normal;
+	/*line-height:0.8;*/
+	margin-bottom:-12px;
+}
+
+ul {
+	padding:0;
+	margin:1.5em 0;
+	list-style:none;
+}
+
+li {
+	display:inline;
+	margin:0 20px;
+	position:relative;
+}
+
+li:after {
+	content:"|";
+	position:absolute;
+	right:-20px;
+}
+
+li:last-child:after {
+	display:none;
+}
+
+li a {
+	/*text-decoration:none;*/
+}
+
+ul .icon {
+	/*opacity:0.5;*/
+}
+
+.btn {
+	display:inline-block;
+	text-decoration:none;
+	background:#f6f6f6;
+	padding:1em 2.5em;
+	font-family:'Inconsolata-Bold', monospace;
+	text-transform: uppercase;
+}
+
+.btn:hover , .btn:active {
+	background:#ededed;
+	text-decoration:none;
+}
+
+.btn .icon {
+	margin-right:10px;
+	position:relative;
+	top:-1px;
+}
+
+.icon {
+	background-color:transparent;
+	background-repeat:no-repeat;
+	display:inline-block;
+	vertical-align:middle;
+	overflow:hidden;
+	text-indent: -3000em;
+	background-size:contain;
+}
+
+.icon-twitter {
+	background-image: url('../svg/twitter.svg');
+	width:18px;
+	height:18px;
+}
+
+.icon-github {
+	background-image: url('../svg/github.svg');
+	width:18px;
+	height:18px;
+}
+
+.icon-linkedin {
+	background-image: url('../svg/linkedin.svg');
+	width:18px;
+	height:18px;
+}
+
+.icon-mail {
+	background-image: url('../svg/mail.svg');
+	width:18px;
+	height:18px;
+}
+
+.icon-download {
+	background-image: url('../svg/download.svg');
+	width:24px;
+	height:24px;
+}
+
+@media (max-width:440px) {
+
+	.container {
+		text-align:left;
+	}
+
+	li {
+		display:block;
+		margin-bottom:1em;
+		margin-left:0;
+	}
+
+	li:after {
+		display:none;
+	}
+}
