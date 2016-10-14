@@ -1,7 +1,10 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-
-// Import CSS
+// Import core CSS
 require("./assets/scss/style.scss");
 
-console.log('hello!');
+var ReactDOM = require('react-dom');
+var routes = require('./config/routes');
+
+ReactDOM.render(
+	routes,
+	document.getElementById('app')
+);

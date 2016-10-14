@@ -1,0 +1,19 @@
+.btn {
+	display:inline-block;
+	text-decoration:none;
+	background:#f6f6f6;
+	padding:1em 2.5em;
+	font-family:'Inconsolata-Bold', monospace;
+	text-transform: uppercase;
+}
+
+.btn:hover , .btn:active {
+	background:#ededed;
+	text-decoration:none;
+}
+
+.btn .icon {
+	margin-right:10px;
+	position:relative;
+	top:-1px;
+}
