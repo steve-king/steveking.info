@@ -19,12 +19,13 @@ module.exports = {
 			{test: [/\.js$/, /\.jsx$/], exclude: /node_modules/, loader: 'babel-loader'},
             {test: /\.scss$/, loader: ExtractTextPlugin.extract('css!sass')},
             {test: [/\.svg$/, ], loader: 'url-loader'},
-            {test: [/\.ttf$/, /\.woff$/, /\.eot$/], loader: 'file-loader', query: {name: '/assets/fonts/[name].[ext]'}}
+            {test: [/\.ttf$/, /\.woff$/, /\.eot$/], loader: 'file-loader', query: {name: '/assets/fonts/[name].[ext]'}},
+			{test: [/\.htaccess/], loader: 'file-loader', query: {name: '.htaccess'}}
 		]
 	},
 	plugins: [
         HtmlWebpackPluginConfig,
-        new ExtractTextPlugin('assets/css/style.css', {
+        new ExtractTextPlugin('/assets/css/style.css', {
             allChunks: true
         })
     ],

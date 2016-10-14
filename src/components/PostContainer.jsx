@@ -10,18 +10,30 @@ var PostContainer = React.createClass({
         })
     },
     componentDidMount: function(){
-        var postType = this.props.route.postType;
-        var postSlug = this.props.routeParams.slug || this.props.route.postSlug;
-        this.loadContent(postType, postSlug);
+        this._isMounted = true;
+        this.postSlug = this.props.routeParams.slug || this.props.route.postSlug;
+        this.loadContent(this.postSlug);
+    },
+    componentWillUnmount: function(){
+        this._isMounted = false;
     },
     componentWillReceiveProps: function(nextProps){
-        var postType = nextProps.route.postType;
-        var postSlug = nextProps.routeParams.slug || nextProps.route.postSlug;
-        this.loadContent(postType, postSlug);
+
+        var nextPostSlug = nextProps.routeParams.slug;
+
+        if( this._isMounted && nextPostSlug !== this.postSlug){
+
+            this.setState({
+                isLoading: true
+            });
+
+            this.postSlug = nextPostSlug;
+            this.loadContent(this.postSlug);
+        }
     },
-    loadContent: function(type, slug){
+    loadContent: function(slug){
         wordpress_api
-            .getPost(type, slug)
+            .getPost(this.props.route.postType, slug)
             .then(function(data){
                 this.setState({
                     isLoading: false,
@@ -41,11 +53,13 @@ var PostContainer = React.createClass({
                         isLoading={this.state.isLoading}
                         title={this.state.title}
                         content={this.state.content}
-                        gallery={this.state.gallery}
-                        galleryLink={this.props.route.parentPath+'/'+this.props.routeParams.slug+'/gallery'}
+                        ctas={this.state.ctas}
+                        galleryLink={this.state.gallery && '/'+this.props.route.parentPath+'/'+this.props.routeParams.slug+'/gallery'}
                      />
                 </Panel>
-                {this.props.children}
+                {this.state.gallery && this.props.children && React.cloneElement(this.props.children, {
+                    gallery: this.state.gallery
+                })}
             </div>
 		);
 	}

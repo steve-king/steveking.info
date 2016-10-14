@@ -16,7 +16,6 @@ var ListContainer = React.createClass({
         wordpress_api
             .getPosts(postType)
             .then(function(posts){
-				console.log(posts);
                 this.setState({
                     isLoading: false,
                     posts: posts

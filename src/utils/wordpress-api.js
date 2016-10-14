@@ -11,7 +11,7 @@ var service = {
     },
     getPosts: function(type){
         return axios
-                .get(api_base_url + type + '')
+                .get(api_base_url + type)
                 .then(function(response){
                     return response.data;
                 });

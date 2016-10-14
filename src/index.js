@@ -1,5 +1,6 @@
 // Import core CSS
-require("./assets/scss/style.scss");
+require('./assets/scss/style.scss');
+require('./.htaccess');
 
 var ReactDOM = require('react-dom');
 var routes = require('./config/routes');

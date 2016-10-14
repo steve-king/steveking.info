@@ -14,7 +14,11 @@ var Gallery = function(props){
 	return (
 		<Panel canClose={props.route.panelCanClose} parentPath={parentPath}>
             <h1>Gallery</h1>
-			<img src="https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg" />
+			{props.gallery.map(function(item, i){
+				return (
+					<img src={item.image.url} alt={item.image.alt} key={i} />
+				)
+			})}
 		</Panel>
 	);
 }

@@ -1,19 +1,15 @@
-var React = require('react');
-var ReactRouter = require('react-router');
-var Router = ReactRouter.Router;
-var Route = ReactRouter.Route;
-var hashHistory = ReactRouter.hashHistory;
-var IndexRoute = ReactRouter.IndexRoute;
+import React from 'react';
+import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 
-var Main = require('../components/Main');
-var PostContainer = require('../components/PostContainer');
-var PostsListContainer = require('../components/PostsListContainer');
-var Gallery = require('../components/Gallery');
+import Main from '../components/Main';
+import PostContainer from '../components/PostContainer';
+import PostsListContainer from '../components/PostsListContainer';
+import Gallery from '../components/Gallery';
 
-var indexPageSlug = 'sample-page';
+var indexPageSlug = 'about';
 
 var routes = (
-	<Router history={hashHistory}>
+	<Router history={browserHistory}>
 		<Route path='/' component={Main}>
 			<IndexRoute component={PostContainer} postType="pages" postSlug={indexPageSlug} />
 
