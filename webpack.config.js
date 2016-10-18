@@ -19,7 +19,8 @@ module.exports = {
 			{test: [/\.js$/, /\.jsx$/], exclude: /node_modules/, loader: 'babel-loader'},
             {test: /\.scss$/, loader: ExtractTextPlugin.extract('css!sass')},
             {test: [/\.svg$/, ], loader: 'url-loader'},
-            {test: [/\.ttf$/, /\.woff$/, /\.eot$/], loader: 'file-loader', query: {name: '/assets/fonts/[name].[ext]'}},
+			{test: [/\.png/,/\.jpg/,/\.gif/ ], loader: 'file-loader', query: {name: '/assets/img/[name].[ext]'}},
+            {test: [/\.woff$/, /\.woff2$/, /\.ttf$/, /\.eot$/], loader: 'file-loader', query: {name: '/assets/fonts/[name].[ext]'}},
 			{test: [/\.htaccess/], loader: 'file-loader', query: {name: '.htaccess'}}
 		]
 	},
@@ -32,6 +33,7 @@ module.exports = {
 	devtool: 'source-map',
 	devServer: {
 		stats: 'errors-only',
+		historyApiFallback: true
 	},
 	resolve: {
 		extensions: ['', '.js', '.jsx']

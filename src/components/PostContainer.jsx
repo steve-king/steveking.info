@@ -47,11 +47,14 @@ var PostContainer = React.createClass({
     },
 	render: function(){
 		return (
-            <div key={this.props.routeParams.slug || this.props.route.postSlug}>
-                <Panel canClose={this.props.route.panelCanClose} parentPath={this.props.route.parentPath}>
+            <div className='panel__wrapper' key={this.props.routeParams.slug || this.props.route.postSlug}>
+                <Panel
+                    size='large'
+                    title={this.state.title}
+                    canClose={this.props.route.panelCanClose}
+                    parentPath={this.props.route.parentPath}
+                    isLoading={this.state.isLoading}>
                     <Post
-                        isLoading={this.state.isLoading}
-                        title={this.state.title}
                         content={this.state.content}
                         ctas={this.state.ctas}
                         galleryLink={this.state.gallery && '/'+this.props.route.parentPath+'/'+this.props.routeParams.slug+'/gallery'}

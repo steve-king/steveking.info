@@ -1,29 +1,35 @@
+/* inconsolata-regular - latin */
 @font-face {
-	font-family: 'Inconsolata-Bold';
-	src: url('../fonts/Inconsolata-Bold.eot');
-	src: url('../fonts/Inconsolata-Bold.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/Inconsolata-Bold.woff') format('woff'),
-		url('../fonts/Inconsolata-Bold.ttf') format('truetype');
-	font-weight: normal;
+	font-family: 'Inconsolata';
 	font-style: normal;
+	font-weight: 400;
+	src: local('Inconsolata'),
+		url('../fonts/inconsolata-v13-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		url('../fonts/inconsolata-v13-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* inconsolata-700 - latin */
+@font-face {
+	font-family: 'Inconsolata';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Inconsolata Bold'), local('Inconsolata-Bold'),
+		url('../fonts/inconsolata-v13-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+		url('../fonts/inconsolata-v13-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+
+@font-face {
+    font-family: 'Bebas_Neue';
+    src: url('../fonts/bebasneue_regular-webfont.woff2') format('woff2'),
+         url('../fonts/bebasneue_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {
-	font-family: 'Inconsolata-Regular';
-	src: url('../fonts/Inconsolata-Regular.eot');
-	src: url('../fonts/Inconsolata-Regular.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/Inconsolata-Regular.woff') format('woff'),
-		url('../fonts/Inconsolata-Regular.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
-}
-
-@font-face {
-	font-family: 'BebasNeueBold';
-	src: url('../fonts/BebasNeueBold.eot');
-	src: url('../fonts/BebasNeueBold.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/BebasNeueBold.woff') format('woff'),
-		url('../fonts/BebasNeueBold.ttf') format('truetype');
-	font-weight: normal;
-	font-style: normal;
+    font-family: 'Bebas_Neue';
+    src: url('../fonts/bebasneue_bold-webfont.woff2') format('woff2'),
+         url('../fonts/bebasneue_bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
 }

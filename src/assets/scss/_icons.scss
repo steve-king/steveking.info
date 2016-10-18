@@ -3,37 +3,76 @@
 	background-repeat:no-repeat;
 	display:inline-block;
 	vertical-align:middle;
-	// overflow:hidden;
-	// text-indent: -3000em;
+	overflow:hidden;
+	text-indent:-9999em;
 	background-size:contain;
-}
+	background-position:center center;
 
-.icon-twitter {
-	background-image: url('../svg/twitter.svg');
-	width:18px;
-	height:18px;
-}
+	width:16px;
+	height:16px;
 
-.icon-github {
-	background-image: url('../svg/github.svg');
-	width:18px;
-	height:18px;
-}
+	&--medium {
+		width:20px;
+		height:20px;
+	}
 
-.icon-linkedin {
-	background-image: url('../svg/linkedin.svg');
-	width:18px;
-	height:18px;
-}
+	&--large {
+		width:24px;
+		height:24px;
+	}
 
-.icon-mail {
-	background-image: url('../svg/mail.svg');
-	width:18px;
-	height:18px;
-}
+	&--xlarge {
+		width:32px;
+		height:32px;
+	}
 
-.icon-download {
-	background-image: url('../svg/download.svg');
-	width:24px;
-	height:24px;
+	&--arrowRight {
+		background-image: url('../svg/arrow-right.svg');
+	}
+
+	&--chevronRight {
+		background-image: url('../svg/chevron-right.svg');
+	}
+
+	&--twitter {
+		background-image: url('../svg/twitter.svg');
+	}
+
+	&--github {
+		background-image: url('../svg/github.svg');
+	}
+
+	&--linkedin {
+		background-image: url('../svg/linkedin.svg');
+	}
+
+	&--mail {
+		background-image: url('../svg/mail.svg');
+	}
+
+	&--download {
+		background-image: url('../svg/download.svg');
+	}
+
+	&--link {
+		background-image: url('../svg/link.svg');
+	}
+
+	&--close {
+		background-image: url('../svg/cross.svg');
+	}
+
+	&--gallery {
+		background-image: url('../svg/photo-camera.svg');
+	}
+
+	&--home {
+		background-image: url('../svg/home.svg');
+	}
+
+	&--folder {
+		background-image: url('../svg/folder-7.svg');
+		background-image: url('../svg/folder-12.svg');
+		background-image: url('../svg/folder-14.svg');
+	}
 }

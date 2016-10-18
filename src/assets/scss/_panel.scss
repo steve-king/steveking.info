@@ -1,0 +1,93 @@
+.panel {
+    // display:none;
+
+    padding:0 $gutter;
+    margin-bottom:$gutter;
+
+    transform:translateZ(0);
+
+    @include media(tablet){
+        height:100%;
+        flex-grow: 1;
+        max-width:320px;
+        width:calc(100vw - #{$desktopHeaderWidth});
+
+        &__wrapper {
+            display: flex;
+            height:100%;
+            align-items: flex-start;
+        }
+
+        &--large {
+            max-width:560px;
+            width:calc(100vw - #{$desktopHeaderWidth});
+        }
+
+        &--full {
+            flex-grow: 1;
+            max-width:980px;
+            width:calc(100vw - #{$desktopHeaderWidth});
+        }
+    }
+
+    &__inner {
+        height:100%;
+        position:relative;
+        @include trans_bg();
+        border-radius:$borderRadius;
+        display:flex;
+        flex-direction:column;
+        // border:$borderStyle;
+    }
+
+    &__header {
+        position:absolute;
+        top:0;
+        width:100%;
+        padding:0 $gutter * 2;
+        border-radius:$borderRadius $borderRadius 0 0;
+        @include trans_bg();
+        height:$panelHeaderHeight;
+        border-bottom:$borderStyle;
+
+        display:flex;
+        align-items:center;
+        justify-content: space-between;
+
+        &:after {
+            content:"";
+            width:100%;
+            border-bottom:$borderStyle;
+            position:absolute;
+            bottom:-1px;
+            left:0;
+        }
+    }
+
+    &__titleText {
+        // font-family: 'BebasNeueBold';
+    	// @include font-size(30);
+    	// margin:0;
+    	// word-spacing: 0.05em;
+    	// font-weight:normal;
+        // margin-bottom:-0.31em;
+        // // line-height: 1;
+
+        @include font-bebas(24);
+    }
+
+    &__content {
+        padding:($panelHeaderHeight) $gutter * 2 $gutter;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling:touch;
+        min-height:$panelHeaderHeight;
+    }
+
+    // .icon--close {
+    //     position:absolute;
+    //     right:$gutter * 2;
+    //     top:50%;
+    //     transform:translate(0, -50%);
+    //     z-index:1;
+    // }
+}

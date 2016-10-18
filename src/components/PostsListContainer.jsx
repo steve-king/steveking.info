@@ -11,7 +11,6 @@ var ListContainer = React.createClass({
         })
     },
 	componentDidMount: function(){
-
 		var postType = this.props.route.postType;
         wordpress_api
             .getPosts(postType)
@@ -24,9 +23,12 @@ var ListContainer = React.createClass({
 	},
 	render: function(){
 		return (
-			<div>
-				<Panel>
-					<PostsList title='Projects' posts={this.state.posts} />
+			<div className='panel__wrapper'>
+				<Panel
+					size='small'
+					title='Projects'
+					isLoading={this.state.isLoading}>
+					<PostsList posts={this.state.posts} activePost={this.props.params.slug} />
 				</Panel>
 				{this.props.children}
    			</div>

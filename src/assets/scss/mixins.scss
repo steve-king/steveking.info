@@ -1,0 +1,32 @@
+// Specify font size in px and also in rems for browsers that support it
+@mixin font-size($sizeValue: 1.6) {
+    font-size: $sizeValue + px;
+    font-size: ($sizeValue / 10) + rem;
+}
+
+@mixin font-bebas($size:'') {
+    font-family: 'Bebas_Neue';
+    line-height:0.8;
+    @if $size {
+        @include font-size($size);
+    }
+}
+
+@mixin trans_bg($hex:#000, $opacity:$bgOpacity){
+    background:$hex;
+    background:rgba($hex, $opacity);
+    -webkit-backdrop-filter: blur(5px); /* Safari 9+ */
+    backdrop-filter: blur(5px); /* Chrome and Opera */
+}
+
+@mixin media($breakpoint){
+    @media screen and (min-width:map-get($breakpoints, $breakpoint)){
+        @content;
+    }
+}
+
+@mixin mediaMax($breakpoint){
+    @media screen and (max-width: map-get($breakpoints, $breakpoint) - 1 ){
+        @content;
+    }
+}

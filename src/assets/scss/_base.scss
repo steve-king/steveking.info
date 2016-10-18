@@ -1,0 +1,67 @@
+html {
+	box-sizing: border-box;
+    font-size: 62.5%; // Base font size = 10px
+}
+
+*, *:before, *:after {
+	box-sizing: inherit;
+}
+
+body {
+    font-family: 'Inconsolata', monospace;
+    @include font-size($baseFontSize);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.4;
+    color:map-get($colors, black);
+    color:$textColor;
+
+
+    background:url(../img/rain.jpg) no-repeat center center fixed;
+    background-size:cover;
+}
+
+.appContainer {
+    height:100vh;
+	overflow-y:scroll;
+	-webkit-overflow-scrolling:touch;
+    // padding-top:$gutter * 2;
+    // padding-bottom:$gutter * 2;
+
+
+}
+
+.appMain {
+	padding-top:$mobileHeaderHeight + $gutter;
+	// display:none;
+
+	@include media(tablet){
+		display:flex;
+	    overflow-x: scroll;
+	    height:100%;
+	    align-items: flex-start;
+	    width:100vw;
+
+		padding:$gutter*2 $gutter $gutter*2 $desktopHeaderWidth;
+	}
+}
+
+
+h1 {
+	font-family: 'BebasNeueBold';
+	@include font-size(50);
+	margin:0;
+	word-spacing: 0.05em;
+	font-weight:normal;
+	/*line-height:0.8;*/
+	// margin-bottom:-12px;
+}
+
+img {
+	width:100%;
+	height:auto;
+}
+
+a {
+    text-decoration: underline;
+    color:$textColor;
+}

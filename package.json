@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "clean": "rm -rf ./www/",
-    "start": "npm run clean && webpack --watch",
-    "build": "npm run clean && webpack"
+    "start": "webpack-dev-server --inline --hot",
+    "build": "npm run clean && webpack -p"
   },
   "devDependencies": {
     "babel-core": "^6.17.0",

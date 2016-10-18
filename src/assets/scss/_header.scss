@@ -1,0 +1,135 @@
+.appHeader {
+    width:100%;
+    height:$mobileHeaderHeight;
+    color:#fff;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:1;
+    padding: 0 $gutter;
+
+    &__inner {
+        height:100%;
+        @include trans_bg(#000, $headerBgOpacity);
+
+        // position:relative;
+
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 $gutter*2;
+        border-radius: 0 0 $borderRadius $borderRadius;
+
+        // &:before {
+        //     content:"";
+        //     position:absolute;
+        //     top:0;
+        //     left:0;
+        //     right:0;
+        //     bottom:0;
+        //     @include trans_bg();
+        //     z-index:0;
+        // }
+    }
+
+    @include media(tablet){
+        width:$desktopHeaderWidth;
+        height:100%;
+        padding:$gutter*2;
+        padding-right:$gutter/2;
+        padding-left:0;
+
+        &__inner {
+            border-radius:0 $borderRadius $borderRadius 0;
+            padding:$gutter*2 0;
+
+            flex-direction:column;
+
+            &:before {
+                border-radius:0 $borderRadius $borderRadius 0;
+            }
+        }
+    }
+
+    &__title {
+        position:relative;
+        z-index:1;
+
+        // color:#fff;
+        // display:block;
+        @include font-bebas(30);
+        color:map-get($colors, white);
+        text-decoration: none;
+        display: inline-block;
+        white-space: nowrap;
+
+        @include media(tablet){
+            order:2;
+            @include font-bebas(60);
+            transform:rotate(-90deg) translate(-12px, 50px);
+            transform-origin:center left;
+            align-self:flex-start;
+        }
+    }
+
+    &__nav {
+
+        ul {
+            list-style: none;
+            padding:0;
+            margin:0;
+            white-space: nowrap;
+        }
+
+        li {
+            display:inline-block;
+            margin-right:$gutter*2;
+
+            &:last-child {
+                margin:0;
+            }
+        }
+
+        a {
+            text-decoration:none;
+            display:inline-block;
+            // white-space: nowrap;
+        }
+
+        // &__icon {
+        //     margin-right:10px;
+        // }
+
+        &__text {
+            display:none;
+        }
+
+        @include media(tablet){
+
+            order:1;
+
+            ul {
+                white-space: normal;
+            }
+
+            li {
+                display: block;
+                margin:0 0 $gutter*2;
+            }
+
+            a {
+                display:block;
+                text-align:center;
+            }
+
+            &__text {
+                display:block;
+                margin:$gutter 0 0;
+            }
+
+            &__icon {
+
+            }
+        }
+    }
+}

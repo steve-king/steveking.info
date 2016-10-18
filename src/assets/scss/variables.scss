@@ -1,0 +1,27 @@
+// COLOURS
+$colors: (
+    black: #333,
+    white: #FFF
+);
+
+$textColor: map-get($colors, white);
+
+// BREAKPOINTS
+$breakpoints: (
+    tablet: 768px,
+    desktop: 1024px
+);
+
+//
+$baseFontSize: 16;
+$gutter: 8px;
+$borderRadius:8px;
+
+$mobileHeaderHeight:60px;
+$panelHeaderHeight: 40px;
+$desktopHeaderWidth: 100px;
+
+$borderStyle:1px solid rgba(255,255,255, 0.3);
+
+$bgOpacity: 0.7;
+$headerBgOpacity: 0.9;

@@ -1,14 +1,14 @@
 .btn {
 	display:inline-block;
 	text-decoration:none;
-	background:#f6f6f6;
+	background:#333;
 	padding:1em 2.5em;
 	font-family:'Inconsolata-Bold', monospace;
 	text-transform: uppercase;
 }
 
 .btn:hover , .btn:active {
-	background:#ededed;
+	background:#000;
 	text-decoration:none;
 }
 
@@ -16,4 +16,53 @@
 	margin-right:10px;
 	position:relative;
 	top:-1px;
+}
+
+
+.linkList {
+	list-style:none;
+	margin:0 -#{$gutter * 2};
+	padding:0;
+
+	border-top:$borderStyle;
+
+	&:first-child {
+		border:none;
+	}
+
+	li {
+		border-bottom:$borderStyle;
+		// background:trans_bg(#FFF);
+	}
+
+	a {
+		display:block;
+		padding: #{$gutter * 2};
+		position:relative;
+		// background:rgba(255,255,255,0.6);
+		transition:background 0.2s;
+		text-decoration:none;
+
+		// color:#000;
+
+		&:hover, &:active, &.active {
+			background:rgba(0,0,0,0.4);
+
+			.icon {
+				transform:translate(2px, -50%);
+			}
+		}
+
+		&.active {
+			cursor:default;
+		}
+	}
+
+	.icon {
+		position:absolute;
+		right:$gutter * 2;
+		top:50%;
+		transform:translate(0, -50%);
+		transition:transform 0.2s ease-out;
+	}
 }
